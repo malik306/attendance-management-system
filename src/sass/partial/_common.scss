@@ -1,0 +1,23 @@
+%login_register {
+  box-shadow: 5px 5px 5px set-color(gray-5);
+  width: set-col-width(2.5);
+  padding: 2em;
+  border-radius: 0.5ex;
+  border: 0.1px solid set-color(black);
+  @include transition(all, 0.5s, ease, null);
+  &:hover {
+    box-shadow: -5px -5px 5px set-color(gray-5);
+  }
+  @include screen-max-width(1000){
+    width: set-col-width(2);
+  }
+  @include screen-max-width(770){
+    width: set-col-width(1.5);
+  }
+  @include screen-max-width(575){
+    width: set-col-width(1.5);
+  }
+  @include screen-max-width(360){
+    width: set-col-width(1.1);
+  }
+}

@@ -1,0 +1,130 @@
+.register {
+  @extend %login_register;
+  &__brand {
+    font-size: 3.5ex;
+    text-align: center;
+    margin-bottom: 0.2em;
+    @include screen-max-width(360) {
+      font-size: 3ex;
+    }
+  }
+  &__title {
+    @include screen-max-width(360) {
+      font-size: 0.8em;
+    }
+  }
+  &__desc {
+    font-size: 0.9em;
+    margin-top: 0.3em;
+    @include screen-max-width(360) {
+      font-size: 0.8em;
+    }
+  }
+  &__data {
+    margin-top: 0.5em;
+    display: block;
+    &__name,
+    &__pass {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.4em;
+      @include screen-max-width(575){
+        flex-direction: column;
+      }
+      &--fname,
+      &--lname,
+      &--fpass,
+      &--rpass {
+        width: set-col-width(2);
+        display: flex;
+        flex-direction: column;
+        @include screen-max-width(575){
+          width: set-col-width(1);
+        }
+        label {
+          font-weight: 400;
+          color: set-color(black);
+        }
+        input {
+          border: 1.5px solid set-color(gray-5);
+          padding: 0.5em;
+          border-radius: 0.4em;
+          margin-top: 0.4em;
+          @include transition(all, 0.5s, ease, null);
+          &::placeholder {
+            text-transform: capitalize;
+            font-size: 0.8em;
+          }
+          &:focus,
+          &:hover {
+            border: 1.5px solid set-color(black);
+          }
+        }
+      }
+      &--fname,
+      &--fpass {
+        margin-right: 0.2em;
+      }
+      &--lname,
+      &--rpass {
+        margin-left: 0.2em;
+      }
+    }
+    &__email {
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.4em;
+      label {
+        font-weight: 400;
+        color: set-color(black);
+      }
+      input {
+        border: 1.5px solid set-color(gray-5);
+        padding: 0.5em;
+        border-radius: 0.4em;
+        margin-top: 0.4em;
+        @include transition(all, 0.5s, ease, null);
+        &::placeholder {
+          text-transform: capitalize;
+          font-size: 0.8em;
+        }
+        &:focus,
+        &:hover {
+          border: 1.5px solid set-color(black);
+        }
+      }
+    }
+    &__btn {
+      display: block;
+      text-align: center;
+      margin-top: 1.5em;
+      &--login,
+      &--dashboard {
+        padding: 0.8em 1em;
+        font-size: 0.9em;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 0.4em;
+        margin: 0 0.5em;
+        box-shadow: 5px 5px 5px set-color(gray-5);
+        @include transition(all, 0.5s, ease, null);
+      }
+      &--login {
+        background: set-color(black);
+        color: set-color(white);
+        &:hover {
+          background: set-color(gray-5);
+          color: set-color(black);
+        }
+      }
+      &--dashboard {
+        background: set-color(gray-5);
+        color: set-color(black);
+        &:hover {
+          background: set-color(black);
+          color: set-color(white);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+.login {
+  @extend %login_register;
+  &__brand {
+    font-size: 3.5ex;
+    text-align: center;
+    margin-bottom: 0.2em;
+    @include screen-max-width(360){
+      font-size: 3ex;
+    }
+  }
+  &__title{
+    @include screen-max-width(360){
+      font-size: 0.8em;
+    }
+  }
+  &__desc {
+    font-size: 0.9em;
+    margin-top: 0.3em;
+    @include screen-max-width(360){
+      font-size: 0.8em;
+    }
+  }
+  &__data {
+    display: block;
+    margin-top: 0.5em;
+    &__email,
+    &__pass {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.5em;
+      label {
+        color: set-color(black);
+        font-weight: 400;
+      }
+      input {
+        display: block;
+        padding: 0.5em;
+        border: 1.5px solid set-color(gray-5);
+        border-radius: 0.4em;
+        margin-top: 0.2em;
+        @include transition(all, 0.5s, ease, null);
+        &::placeholder {
+          text-transform: capitalize;
+          font-size: 0.8em;
+        }
+        &:focus,
+        &:hover {
+          border: 1.5px solid set-color(black);
+        }
+      }
+    }
+    &__btn {
+      display: block;
+      text-align: center;
+      margin-top: 1.5em;
+      &--login,
+      &--register {
+        padding: 0.8em 1em;
+        font-size: 0.9em;
+        border-radius: 0.4em;
+        font-weight: bold;
+        cursor: pointer;
+        margin: 0 0.5em;
+        @include transition(all, 0.5s, ease, null);
+        box-shadow: 5px 5px 5px set-color(gray-5);
+      }
+      &--login {
+        background: set-color(black);
+        color: set-color(white);
+        &:hover {
+          background: set-color(gray-5);
+          color: set-color(black);
+        }
+      }
+      &--register {
+        background: set-color(gray-5);
+        color: set-color(black);
+        &:hover {
+          background: set-color(black);
+          color: set-color(white);
+        }
+      }
+
+    }
+  }
+}

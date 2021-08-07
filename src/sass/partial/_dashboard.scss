@@ -1,0 +1,185 @@
+.userdash {
+  display: grid;
+  grid-template: 100vh /15% 1fr;
+  &__side {
+    background: set-color(gray-5);
+    padding: 1em 0.2em;
+    &--brand {
+      text-align: center;
+      filter: drop-shadow(2px 1px 1.5px set-color(white));
+    }
+    &__username {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      margin: 0.5em 0;
+      padding: 0 0.3em;
+      img {
+        border-radius: 50%;
+        user-select: none;
+        cursor: pointer;
+        width: set-col-width(4);
+        margin-right: 0.5em;
+        border: 1px solid set-color(white);
+      }
+    }
+    &__item {
+      display: block;
+      padding: 0.2em 0;
+      ul a {
+        li {
+          text-transform: capitalize;
+          display: block;
+          color: set-color(black);
+          font-weight: 400;
+        }
+        width: set-col-width(1);
+        display: flex;
+        margin: 5px 0;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 0.2em;
+        padding: 1ex;
+        @include transition(all, 0.5s, ease, null);
+        svg {
+          width: set-col-width(8);
+          margin-right: 6px;
+        }
+        &:hover {
+          background: set-color(black);
+        }
+        &:hover li {
+          color: set-color(white);
+        }
+        &:hover svg {
+          fill: set-color(white);
+        }
+      }
+    }
+  }
+  &__top {
+    &__height {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+      width: set-col-width(1);
+      padding: 0.5em;
+      &__bar {
+        cursor: pointer;
+        @include transition(all, 1s, ease, null);
+        svg {
+          width: 1.5em;
+        }
+        &:hover svg {
+          fill: set-color(gray-5);
+        }
+      }
+      &__name {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &__profile {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          cursor: pointer;
+          p {
+            margin: 0 0.4em;
+            user-select: none;
+          }
+          img {
+            width: 3em;
+            border-radius: 50%;
+            user-select: none;
+            &:hover{
+              border: 1px dotted set-color(black);
+            }
+          }
+          &__angle-down {
+            svg {
+              width: 0.6em;
+              margin-top: 0.5em;
+            }
+            &:hover svg {
+              fill: set-color(gray-5);
+            }
+          }
+        }
+        .isOpen{
+          display: block;
+        }
+        &__dropdown {
+          display: none;
+          background: set-color(gray-5);
+          border-radius: 0.2em;
+          padding: 0.2em;
+          position: absolute;
+          top: 55px;
+          left: 10px;
+          ul {
+            display: flex;
+            flex-direction: column;
+            a {
+              display: flex;
+              flex-wrap: nowrap;
+              padding: 0.3em;
+              border-radius: 0.2em;
+              color: set-color(black);
+              align-items: center;
+              margin: 0.2em 0;
+              @include transition(all, 0.5s, ease, null);
+              svg {
+                width: 1.4em;
+                margin-right: 0.4em;
+              }
+              &:hover {
+                background: set-color(black);
+                color: set-color(white);
+              }
+              &:hover svg {
+                fill: set-color(white);
+              }
+            }
+          }
+        }
+      }
+    }
+    &__main {
+      padding: 0.4em;
+      &__table {
+        width: set-col-width(1);
+        table {
+          border-collapse: collapse;
+          width: set-col-width(1);
+          thead tr th {
+            text-align: left;
+            background: set-color(gray-5);
+            border: 1px solid set-color(gray-4);
+            padding: 0.5em 0.2em;
+          }
+          tbody {
+            tr {
+              @include transition(all, 0.5s, ease, null);
+              td {
+                border: 1px solid set-color(gray-4);
+                text-align: left;
+                padding: 0.5em 0.2em;
+                svg {
+                  width: 1.5em;
+                  cursor: pointer;
+                  @include transition(all, 0.5s, ease, null);
+                  &:hover {
+                    fill: set-color(gray-6);
+                  }
+                }
+              }
+              &:hover {
+                background: set-color(gray-4);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
